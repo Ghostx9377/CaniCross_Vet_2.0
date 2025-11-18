@@ -295,7 +295,10 @@ class CertificacionesActivity : AppCompatActivity() {
             .child(idPerro)
             .child(idCertificacion)
 
-        val updates = mapOf("calificacion" to nuevaCalificacion)
+        val updates = mutableMapOf<String, Any>(
+            "calificacion" to nuevaCalificacion,
+            "estado" to "calificado"
+        )
 
         certRef.updateChildren(updates)
             .addOnSuccessListener {
@@ -303,6 +306,7 @@ class CertificacionesActivity : AppCompatActivity() {
                 // Actualizar el texto en la vista
                 val datosActualizados = datosCertificacion.toMutableMap()
                 datosActualizados["calificacion"] = nuevaCalificacion
+                datosActualizados["estado"] = "calificado"
                 textView.text = construirTextoCertificacionInscrita(datosActualizados)
             }
             .addOnFailureListener { e ->
