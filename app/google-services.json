@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "602370865338",
+    "firebase_url": "https://appcanicross-default-rtdb.firebaseio.com",
+    "project_id": "appcanicross",
+    "storage_bucket": "appcanicross.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:602370865338:android:34ac91a79387dd1979ea83",
+        "android_client_info": {
+          "package_name": "com.example.appuscanicross"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9PZHdmWcK3Y0EIPZxuErBfdSObVxgHmA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:602370865338:android:bee3b6fa4cdc05a579ea83",
+        "android_client_info": {
+          "package_name": "com.example.canicross_vet"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9PZHdmWcK3Y0EIPZxuErBfdSObVxgHmA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

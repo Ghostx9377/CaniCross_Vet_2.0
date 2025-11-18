@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_registro"
+        android:title="Aprobación de Perros"
+        android:icon="@android:drawable/ic_lock_lock" />
+
+    <item
+        android:id="@+id/nav_consulta"
+        android:title="Consulta de Mascotas"
+        android:icon="@android:drawable/ic_menu_search" />
+    <item
+        android:id="@+id/nav_certificaciones"
+        android:title="Certificaciones"
+        android:icon="@android:drawable/ic_menu_info_details" />
+    <item
+        android:id="@+id/nav_logout"
+        android:title="Cerrar sesión"
+        android:icon="@android:drawable/ic_lock_power_off" />
+</menu> 

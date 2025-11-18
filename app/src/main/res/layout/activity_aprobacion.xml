@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5c4a2">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_aprobacion"
+        android:layout_width="418dp"
+        android:layout_height="64dp"
+        android:background="#6B4A3A"
+        android:buttonTint="#6B4A3A"
+        android:title="Aprobación de mascotas"
+        android:titleTextColor="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_back"
+        app:title="        Aprobacion de Perros" />
+
+
+
+    <ScrollView
+        android:id="@+id/scrollViewAprobacion"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_aprobacion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/contentAprobacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textLogin3"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="serif"
+                android:text="Introduce id del perro y id del dueño para buscar"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textLogin2" />
+
+            <EditText
+                android:id="@+id/editTextText3"
+                android:layout_width="300dp"
+                android:layout_height="39dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/rounded_edittext"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="Nombre"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textColorHint="#000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+
+            <EditText
+                android:id="@+id/editTextText4"
+                android:layout_width="300dp"
+                android:layout_height="39dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/rounded_edittext"
+                android:enabled="false"
+                android:hint="Raza"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textColorHint="#000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+
+            <EditText
+                android:id="@+id/editTextText5"
+                android:layout_width="300dp"
+                android:layout_height="39dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/rounded_edittext"
+                android:enabled="false"
+                android:hint="Fecha de nacimiento"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textColorHint="#000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
+
+            <EditText
+                android:id="@+id/editTextText6"
+                android:layout_width="300dp"
+                android:layout_height="39dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/rounded_edittext"
+                android:enabled="true"
+                android:hint="Sexo"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textColorHint="#000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextText5" />
+
+            <EditText
+                android:id="@+id/editTextText7"
+                android:layout_width="300dp"
+                android:layout_height="39dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/rounded_edittext"
+                android:enabled="true"
+                android:hint="Peso"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textColorHint="#000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextText6" />
+
+            <EditText
+                android:id="@+id/editTextText8"
+                android:layout_width="300dp"
+                android:layout_height="39dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/rounded_edittext"
+                android:enabled="false"
+                android:hint="Numero de cartilla"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textColorHint="#000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextText7" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupEstatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/editTextText8"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp">
+
+                <RadioButton
+                    android:id="@+id/radioValido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#6B4A3A"
+                    android:checked="true"
+                    android:text="Estatus válido"
+                    android:textColor="#000000" />
+
+                <RadioButton
+                    android:id="@+id/radioInvalido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#6B4A3A"
+                    android:text="Estatus inválido"
+                    android:textColor="#000000" />
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/editTextObservaciones"
+                android:layout_width="300dp"
+                android:layout_height="39dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/rounded_edittext"
+                android:hint="Observaciones"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textColorHint="#000000"
+                android:textColor="#000000"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroupEstatus"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/editTextText"
+                android:layout_width="300dp"
+                android:layout_height="39dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/rounded_edittext"
+                android:ems="10"
+                android:hint="Id del perro"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textColorHint="#000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textLogin3" />
+
+            <EditText
+                android:id="@+id/editTextText2"
+                android:layout_width="300dp"
+                android:layout_height="39dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/rounded_edittext"
+                android:ems="10"
+                android:hint="Id del dueño"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textColorHint="#000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+
+            <Button
+                android:id="@+id/btn_buscar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:backgroundTint="#6B4A3A"
+                android:text="Buscar"
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextObservaciones"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/btn_limpiar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#6B4A3A"
+                android:text="limpiar"
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btn_editar"
+                app:layout_constraintStart_toEndOf="@+id/btn_buscar"
+                app:layout_constraintTop_toBottomOf="@+id/editTextObservaciones"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/btn_editar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#6B4A3A"
+                android:text="Editar"
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.791"
+                app:layout_constraintStart_toEndOf="@+id/btn_buscar"
+                app:layout_constraintTop_toBottomOf="@+id/editTextObservaciones"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
