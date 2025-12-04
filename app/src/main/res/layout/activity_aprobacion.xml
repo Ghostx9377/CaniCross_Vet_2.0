@@ -41,18 +41,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="32dp"
-                android:text="Introduce id del perro y id del dueño para buscar"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp"
-                android:textStyle="bold"
                 android:fontFamily="serif"
                 android:letterSpacing="0.05"
                 android:lineSpacingExtra="8dp"
                 android:shadowColor="#80000000"
                 android:shadowDx="3"
                 android:shadowDy="3"
-                android:shadowRadius="6" />
+                android:shadowRadius="6"
+                android:text="Introduce id del perro y id del dueño para buscar"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <!-- Card para búsqueda -->
             <androidx.cardview.widget.CardView
@@ -86,11 +86,11 @@
                             android:id="@+id/editTextText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
                             android:inputType="text"
-                            android:textSize="15sp"
                             android:textColor="#000000"
-                            android:textColorHint="#7A7A7A"
-                            android:fontFamily="sans-serif" />
+                            android:textColorHint="#000000"
+                            android:textSize="15sp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 

@@ -42,12 +42,13 @@
                     android:id="@+id/editTextNombrePerro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:textSize="15sp"
-                    android:textColor="#000000"
-                    android:textColorHint="#7A7A7A"
+                    android:backgroundTint="@color/black"
                     android:fontFamily="sans-serif"
-                    android:imeOptions="actionSearch" />
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:textColor="#000000"
+                    android:textColorHint="#000000"
+                    android:textSize="15sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -74,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Certificaciones encontradas"
-                android:textColor="@android:color/white"
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -84,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Ingresa el nombre del perro para buscar."
-                android:textColor="@android:color/white"
+                android:textColor="@color/white"
                 android:textSize="14sp" />
 
             <androidx.recyclerview.widget.RecyclerView
