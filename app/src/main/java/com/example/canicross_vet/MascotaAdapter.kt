@@ -3,13 +3,16 @@ package com.example.canicross_vet
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 class MascotaAdapter(private val mascotas: List<Map<String, Any>>) : 
     RecyclerView.Adapter<MascotaAdapter.MascotaViewHolder>() {
 
     class MascotaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val imageViewMascota: ImageView = view.findViewById(R.id.imageViewMascota)
         val textViewNombre: TextView = view.findViewById(R.id.textViewNombre)
         val textViewRaza: TextView = view.findViewById(R.id.textViewRaza)
         val textViewFecha: TextView = view.findViewById(R.id.textViewFecha)
@@ -29,6 +32,17 @@ class MascotaAdapter(private val mascotas: List<Map<String, Any>>) :
 
     override fun onBindViewHolder(holder: MascotaViewHolder, position: Int) {
         val mascota = mascotas[position]
+
+        // Cargar imagen desde Firebase Storage usando la URL guardada en imagen_url
+        val imagenUrl = mascota["imagen_url"]?.toString().orEmpty()
+        if (imagenUrl.isNotEmpty()) {
+            Glide.with(holder.imageViewMascota.context)
+                .load(imagenUrl)
+                .centerCrop()
+                .into(holder.imageViewMascota)
+        } else {
+            holder.imageViewMascota.setImageDrawable(null)
+        }
         
         holder.textViewNombre.text = "Nombre: ${mascota["nombre"]}"
         holder.textViewRaza.text = "Raza: ${mascota["raza"]}"
