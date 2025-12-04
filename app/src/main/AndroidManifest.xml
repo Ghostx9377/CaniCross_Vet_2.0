@@ -43,6 +43,10 @@
             android:name=".CertificacionesActivity"
             android:exported="false"
             android:theme="@style/Theme.CaniCross_Vet" />
+        <activity
+            android:name=".DetalleCertificacionesActivity"
+            android:exported="false"
+            android:theme="@style/Theme.CaniCross_Vet" />
     </application>
 
 </manifest>

@@ -4,259 +4,454 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f5c4a2">
+    android:background="@drawable/canicross_bgop">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_aprobacion"
-        android:layout_width="418dp"
-        android:layout_height="64dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="#6B4A3A"
-        android:buttonTint="#6B4A3A"
-        android:title="Aprobación de mascotas"
-        android:titleTextColor="#FFFFFF"
+        android:minHeight="?attr/actionBarSize"
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/ic_back"
-        app:title="        Aprobacion de Perros" />
-
-
+        app:title="Aprobación de Perros"
+        app:titleTextColor="#FFFFFF" />
 
     <ScrollView
         android:id="@+id/scrollViewAprobacion"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:fillViewport="true"
         app:layout_constraintTop_toBottomOf="@id/toolbar_aprobacion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:id="@+id/contentAprobacion"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
 
+            <!-- Título elegante y vistoso -->
             <TextView
                 android:id="@+id/textLogin3"
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:fontFamily="serif"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="32dp"
                 android:text="Introduce id del perro y id del dueño para buscar"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
-                android:textSize="30sp"
+                android:textSize="24sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.495"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textLogin2" />
+                android:fontFamily="serif"
+                android:letterSpacing="0.05"
+                android:lineSpacingExtra="8dp"
+                android:shadowColor="#80000000"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="6" />
 
-            <EditText
-                android:id="@+id/editTextText3"
-                android:layout_width="300dp"
-                android:layout_height="39dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/rounded_edittext"
-                android:ems="10"
-                android:enabled="false"
-                android:hint="Nombre"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:textColorHint="#000000"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+            <!-- Card para búsqueda -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@android:color/white">
 
-            <EditText
-                android:id="@+id/editTextText4"
-                android:layout_width="300dp"
-                android:layout_height="39dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/rounded_edittext"
-                android:enabled="false"
-                android:hint="Raza"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:textColorHint="#000000"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
 
-            <EditText
-                android:id="@+id/editTextText5"
-                android:layout_width="300dp"
-                android:layout_height="39dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/rounded_edittext"
-                android:enabled="false"
-                android:hint="Fecha de nacimiento"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:textColorHint="#000000"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:hint="Id del perro"
+                        app:hintTextColor="#7A7A7A"
+                        app:boxStrokeColor="#6B4A3A"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-            <EditText
-                android:id="@+id/editTextText6"
-                android:layout_width="300dp"
-                android:layout_height="39dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/rounded_edittext"
-                android:enabled="true"
-                android:hint="Sexo"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:textColorHint="#000000"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextText5" />
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:textSize="15sp"
+                            android:textColor="#000000"
+                            android:textColorHint="#7A7A7A"
+                            android:fontFamily="sans-serif" />
 
-            <EditText
-                android:id="@+id/editTextText7"
-                android:layout_width="300dp"
-                android:layout_height="39dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/rounded_edittext"
-                android:enabled="true"
-                android:hint="Peso"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:textColorHint="#000000"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextText6" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
-                android:id="@+id/editTextText8"
-                android:layout_width="300dp"
-                android:layout_height="39dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/rounded_edittext"
-                android:enabled="false"
-                android:hint="Numero de cartilla"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:textColorHint="#000000"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextText7" />
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Id del dueño"
+                        app:hintTextColor="#7A7A7A"
+                        app:boxStrokeColor="#6B4A3A"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-            <RadioGroup
-                android:id="@+id/radioGroupEstatus"
-                android:layout_width="wrap_content"
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextText2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:textSize="15sp"
+                            android:textColor="#000000"
+                            android:textColorHint="#7A7A7A"
+                            android:fontFamily="sans-serif" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card para información del perro -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@android:color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Información del Perro"
+                        android:textColor="#2C3E50"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-medium"
+                        android:layout_marginBottom="20dp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:hint="Nombre"
+                        app:hintTextColor="#7A7A7A"
+                        app:boxStrokeColor="#E0E0E0"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextText3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:inputType="text"
+                            android:textSize="15sp"
+                            android:textColor="#000000"
+                            android:textColorHint="#7A7A7A"
+                            android:fontFamily="sans-serif" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:hint="Raza"
+                        app:hintTextColor="#7A7A7A"
+                        app:boxStrokeColor="#E0E0E0"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextText4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:inputType="text"
+                            android:textSize="15sp"
+                            android:textColor="#000000"
+                            android:textColorHint="#7A7A7A"
+                            android:fontFamily="sans-serif" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:hint="Fecha de nacimiento"
+                        app:hintTextColor="#7A7A7A"
+                        app:boxStrokeColor="#E0E0E0"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextText5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:inputType="text"
+                            android:textSize="15sp"
+                            android:textColor="#000000"
+                            android:textColorHint="#7A7A7A"
+                            android:fontFamily="sans-serif" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sexo"
+                            android:textColor="#7A7A7A"
+                            android:textSize="12sp"
+                            android:layout_marginBottom="4dp"
+                            android:layout_marginStart="4dp" />
+
+                        <Spinner
+                            android:id="@+id/editTextText6"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp"
+                            android:textSize="15sp"
+                            android:textColor="#000000"
+                            android:fontFamily="sans-serif"
+                            android:background="@drawable/rounded_edittext" />
+
+                    </LinearLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:hint="Peso"
+                        app:hintTextColor="#7A7A7A"
+                        app:boxStrokeColor="#6B4A3A"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextText7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="true"
+                            android:inputType="numberDecimal"
+                            android:textSize="15sp"
+                            android:textColor="#000000"
+                            android:textColorHint="#7A7A7A"
+                            android:fontFamily="sans-serif" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Numero de cartilla"
+                        app:hintTextColor="#7A7A7A"
+                        app:boxStrokeColor="#E0E0E0"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextText8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:inputType="text"
+                            android:textSize="15sp"
+                            android:textColor="#000000"
+                            android:textColorHint="#7A7A7A"
+                            android:fontFamily="sans-serif" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card para estatus -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@android:color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Estatus"
+                        android:textColor="#2C3E50"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-medium"
+                        android:layout_marginBottom="16dp" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupEstatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <RadioButton
+                            android:id="@+id/radioValido"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="32dp"
+                            android:text="Estatus válido"
+                            android:textColor="#2C3E50"
+                            android:textSize="15sp"
+                            android:fontFamily="sans-serif"
+                            android:buttonTint="#4CAF50"
+                            android:checked="true" />
+
+                        <RadioButton
+                            android:id="@+id/radioInvalido"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Estatus inválido"
+                            android:textColor="#2C3E50"
+                            android:textSize="15sp"
+                            android:fontFamily="sans-serif"
+                            android:buttonTint="#F44336" />
+
+                    </RadioGroup>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layoutObservaciones"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:hint="Observaciones"
+                        android:visibility="gone"
+                        app:hintTextColor="#7A7A7A"
+                        app:boxStrokeColor="#F44336"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextObservaciones"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            android:minLines="3"
+                            android:textSize="15sp"
+                            android:textColor="#000000"
+                            android:textColorHint="#7A7A7A"
+                            android:fontFamily="sans-serif" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Botones -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@+id/editTextText8"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="16dp">
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp">
 
-                <RadioButton
-                    android:id="@+id/radioValido"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="#6B4A3A"
-                    android:checked="true"
-                    android:text="Estatus válido"
-                    android:textColor="#000000" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_buscar"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="Buscar"
+                    android:textSize="15sp"
+                    android:textColor="@android:color/white"
+                    android:fontFamily="sans-serif-medium"
+                    app:cornerRadius="12dp"
+                    app:backgroundTint="#6B4A3A"
+                    style="@style/Widget.Material3.Button" />
 
-                <RadioButton
-                    android:id="@+id/radioInvalido"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="#6B4A3A"
-                    android:text="Estatus inválido"
-                    android:textColor="#000000" />
-            </RadioGroup>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_limpiar"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Limpiar"
+                    android:textSize="15sp"
+                    android:textColor="@android:color/white"
+                    android:fontFamily="sans-serif-medium"
+                    app:cornerRadius="12dp"
+                    app:backgroundTint="#757575"
+                    style="@style/Widget.Material3.Button" />
 
-            <EditText
-                android:id="@+id/editTextObservaciones"
-                android:layout_width="300dp"
-                android:layout_height="39dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/rounded_edittext"
-                android:hint="Observaciones"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:textColorHint="#000000"
-                android:textColor="#000000"
-                android:visibility="gone"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroupEstatus"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_editar"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:text="Editar"
+                    android:textSize="15sp"
+                    android:textColor="@android:color/white"
+                    android:fontFamily="sans-serif-medium"
+                    app:cornerRadius="12dp"
+                    app:backgroundTint="#2196F3"
+                    style="@style/Widget.Material3.Button" />
 
-            <EditText
-                android:id="@+id/editTextText"
-                android:layout_width="300dp"
-                android:layout_height="39dp"
-                android:layout_marginTop="24dp"
-                android:background="@drawable/rounded_edittext"
-                android:ems="10"
-                android:hint="Id del perro"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:textColorHint="#000000"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.495"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textLogin3" />
+            </LinearLayout>
 
-            <EditText
-                android:id="@+id/editTextText2"
-                android:layout_width="300dp"
-                android:layout_height="39dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/rounded_edittext"
-                android:ems="10"
-                android:hint="Id del dueño"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:textColorHint="#000000"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        </LinearLayout>
 
-            <Button
-                android:id="@+id/btn_buscar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:backgroundTint="#6B4A3A"
-                android:text="Buscar"
-                android:textColor="#FFFFFF"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextObservaciones"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <Button
-                android:id="@+id/btn_limpiar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#6B4A3A"
-                android:text="limpiar"
-                android:textColor="#FFFFFF"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/btn_editar"
-                app:layout_constraintStart_toEndOf="@+id/btn_buscar"
-                app:layout_constraintTop_toBottomOf="@+id/editTextObservaciones"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <Button
-                android:id="@+id/btn_editar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#6B4A3A"
-                android:text="Editar"
-                android:textColor="#FFFFFF"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.791"
-                app:layout_constraintStart_toEndOf="@+id/btn_buscar"
-                app:layout_constraintTop_toBottomOf="@+id/editTextObservaciones"
-                app:layout_constraintVertical_bias="0.0" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

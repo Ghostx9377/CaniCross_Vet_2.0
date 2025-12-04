@@ -26,36 +26,41 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <EditText
-                android:id="@+id/editTextIdPerroCert"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="ID del perro"
-                android:background="@drawable/rounded_edittext"
-                android:padding="12dp"
-                android:inputType="text"
-                android:textColor="@android:color/black" />
+                android:hint="Buscar por nombre del perro"
+                app:hintTextColor="#7A7A7A"
+                app:boxStrokeColor="#6B4A3A"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-            <EditText
-                android:id="@+id/editTextIdDuenoCert"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:hint="ID del dueño"
-                android:background="@drawable/rounded_edittext"
-                android:padding="12dp"
-                android:inputType="text"
-                android:textColor="@android:color/black" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextNombrePerro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textSize="15sp"
+                    android:textColor="#000000"
+                    android:textColorHint="#7A7A7A"
+                    android:fontFamily="sans-serif"
+                    android:imeOptions="actionSearch" />
 
-            <Button
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_buscar_certificaciones"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="56dp"
                 android:layout_marginTop="16dp"
-                android:background="@drawable/rounded_button"
-                android:text="Buscar certificaciones"
-                android:textAllCaps="false"
-                android:textColor="@android:color/white" />
+                android:text="Buscar perro"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                app:backgroundTint="#6B4A3A"
+                app:cornerRadius="12dp" />
 
             <View
                 android:layout_width="match_parent"
@@ -78,16 +83,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Ingresa los IDs para consultar."
+                android:text="Ingresa el nombre del perro para buscar."
                 android:textColor="@android:color/white"
                 android:textSize="14sp" />
 
-            <LinearLayout
-                android:id="@+id/layout_certificaciones"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewPerros"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:orientation="vertical" />
+                android:layout_marginTop="16dp" />
 
         </LinearLayout>
     </ScrollView>
